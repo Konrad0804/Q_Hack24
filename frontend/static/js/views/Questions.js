@@ -8,18 +8,18 @@ export default class extends AbstractView{
     
         async getHtml() {
             return `
-                <div class="quiz">
-                    <h1>Quiz Questions</h1>
-                    <div class="question">
-                        <h2>Example Question</h2>
-                        <div class="answers">
-                            <div class="answer">Answer 1</div>
-                            <div class="answer">Answer 2</div>
-                            <div class="answer">Answer 3</div>
-                            <div class="answer">Answer 4</div>
-                        </div>
-                    </div>
+            <div class="quiz">
+            <h1>Quiz Questions</h1>
+            <div class="question">
+                <h2>Example Question</h2>
+                <div class="answers">
+                    <button class="answer">Answer 1</button>
+                    <button class="answer">Answer 2</button>
+                    <button class="answer">Answer 3</button>
+                    <button class="answer">Answer 4</button>
                 </div>
+            </div>
+        </div>
             `;
         }
     }
