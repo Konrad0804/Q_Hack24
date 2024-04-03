@@ -1,8 +1,9 @@
 import Dashboard from "./views/Dashboard.js";
 import Upload from "./views/Upload.js";
 import Quiz from "./views/Quiz.js";
+import Questions from "./views/Questions.js";
 
-const navigateTo = url =>{
+window.navigateTo = function(url) {
     history.pushState(null, null, url);
     router();
 };
@@ -12,6 +13,7 @@ const router = async () => {
         {path: "/", view: Dashboard},
         {path: "/upload", view: Upload},
         {path: "/quiz", view: Quiz},
+        {path: "/questions", view: Questions}
     ];
 
     const potentialMatches = routes.map(route =>{
@@ -33,6 +35,8 @@ const router = async () => {
     const view = new match.route.view();
 
     document.querySelector("#app").innerHTML = await view.getHtml();
+
+    if(view.afterRender) view.afterRender();
 
     console.log(match.route.view());
 };
