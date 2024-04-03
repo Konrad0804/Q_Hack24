@@ -10,7 +10,7 @@ export default class extends AbstractView{
             return `
             <div class="quiz">
             <h1>Quiz Questions</h1>
-            <div class="question">
+            <div class="quiz container">
                 <h2>Example Question</h2>
                 <div class="answers">
                     <button class="answer">Answer 1</button>

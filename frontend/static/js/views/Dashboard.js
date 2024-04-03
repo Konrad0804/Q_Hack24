@@ -15,6 +15,27 @@ export default class extends AbstractView{
       <p>
           <a href="/posts" data-link>View recent posts</a>.
       </p>
+      <p>
+          <input type="file" id="imageUpload" accept="image/*" />
+          <button id="uploadButton">Upload</button>
+      </p>
+      <img id="uploadedImage" />
   `;
     }
+
+    afterRender() {
+        document.getElementById('uploadButton').addEventListener('click', () => {
+            const file = document.getElementById('imageUpload').files[0];
+            const reader = new FileReader();
+    
+            reader.onloadend = () => {
+                document.getElementById('uploadedImage').src = reader.result;
+            }
+    
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    
 }

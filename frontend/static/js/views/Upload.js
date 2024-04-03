@@ -12,6 +12,7 @@ export default class extends AbstractView{
     
       <p>
           <input type="file" id="fileUpload" />
+          <button id="uploadButton">Upload</button>
       </p>
 
       <p>
